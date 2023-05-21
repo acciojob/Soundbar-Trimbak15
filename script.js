@@ -1,13 +1,11 @@
-//your JS code here. If required.
 function playSound(soundFile) {
-  const audio = new Audio(`sounds/${soundFile}`);
-  audio.play();
+  const audioElement = document.getElementById('audio');
+  audioElement.src = `sounds/${soundFile}`;
+  audioElement.play();
 }
 
 function stopSound() {
-  const audioElements = document.getElementsByTagName('audio');
-  for (let i = 0; i < audioElements.length; i++) {
-    audioElements[i].pause();
-    audioElements[i].currentTime = 0;
-  }
+  const audioElement = document.getElementById('audio');
+  audioElement.pause();
+  audioElement.currentTime = 0;
 }
